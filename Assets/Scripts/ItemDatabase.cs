@@ -17,11 +17,11 @@ public class ItemDatabase : MonoBehaviour
         return items.Find(item => item.id == id);
     }
 
-    public Item GetIten(string itemName)
+    public Item GetItem(string itemName)
     {
         return items.Find(item => item.title == itemName);
     }
-    
+
     void BuildDatabase()
     {
         items = new List<Item>()
@@ -43,7 +43,7 @@ public class ItemDatabase : MonoBehaviour
                 {"Value",500},
             }),
             
-            new Item(3, "Silver Pick", "A Pcik made out of Silver", new Dictionary<string, int>
+            new Item(3, "Silver Pick", "A Pick made out of Silver", new Dictionary<string, int>
             {
                 {"Power",5},
                 {"Defence",50},
