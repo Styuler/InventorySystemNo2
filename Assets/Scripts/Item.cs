@@ -16,7 +16,7 @@ public class Item
     this.id = id;
     this.title = title;
     this.description = description;
-    this.icon = Resources.Load<Sprite>("Sprites/items" + title);
+    this.icon = Resources.Load<Sprite>("Sprites/items/" + title);
     this.stats = stats;
   }
 
@@ -25,7 +25,7 @@ public class Item
     this.id = item.id;
     this.title = item.title;
     this.description = item.description;
-    this.icon = Resources.Load<Sprite>("Sprites/items" + item.title);
+    this.icon = Resources.Load<Sprite>("Sprites/items/" + item.title);
     this.stats = item.stats;
   }
 }

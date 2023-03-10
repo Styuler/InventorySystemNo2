@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
 {
     public List<Item> characterItems = new List<Item>();
     public ItemDatabase itemDatabase;
+    public UIInventory inventoryUI;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class Inventory : MonoBehaviour
     {
         Item itemToAdd = itemDatabase.GetItem(id);
         characterItems.Add(itemToAdd);
+        inventoryUI.AddNewItem(itemToAdd);
         Debug.Log("Added Item: " + itemToAdd.title);
     }
 
@@ -27,6 +29,7 @@ public class Inventory : MonoBehaviour
     {
         Item itemToAdd = itemDatabase.GetItem(itemName);
         characterItems.Add(itemToAdd);
+        inventoryUI.AddNewItem(itemToAdd);
         Debug.Log("Added Item: " + itemToAdd.title);
     }
     
@@ -37,11 +40,12 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItem(int id)
     {
-        Item item = checkForItem(id);
-        if (item != null)
+        Item itemToRemove = checkForItem(id);
+        if (itemToRemove != null)
         {
-            characterItems.Remove(item);
-            Debug.Log("item removed: " + item.title);
+            characterItems.Remove(itemToRemove);
+            inventoryUI.RemoveItem(itemToRemove);
+            Debug.Log("item removed: " + itemToRemove.title);
         }
     }
 }
