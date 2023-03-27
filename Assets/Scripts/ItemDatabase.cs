@@ -1,20 +1,19 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemDatabase : MonoBehaviour
-{
+public class ItemDatabase : MonoBehaviour {
     public List<Item> items = new List<Item>();
 
-    private void Awake()
+    void Awake()
     {
         BuildDatabase();
     }
 
     public Item GetItem(int id)
     {
-        return items.Find(item => item.id == id);
+        return items.Find(item=> item.id == id);
     }
 
     public Item GetItem(string itemName)
@@ -24,40 +23,21 @@ public class ItemDatabase : MonoBehaviour
 
     void BuildDatabase()
     {
-        items = new List<Item>()
-        {
-            new Item(0, "Diamond Sword", "A Sword made out of Diamond", new Dictionary<string, int>
-            {
-                {"Power",15},
-                {"Defence",10},
+        items = new List<Item>() {
+            new Item(0, "Diamond Sword", "A sword made of diamond.",
+            new Dictionary<string, int> {
+                { "Attack", 15 },
+                { "Attack speed", 7 }
             }),
-            
-            new Item(1, "Diamond Pick", "A Pick made out of Diamond", new Dictionary<string, int>
-            {
-                {"Power",10},
-                {"Mining",100},
+            new Item(1, "Diamond Ore", "A little diamond.",
+            new Dictionary<string, int> {
+                { "Value", 300 }
             }),
-            
-            new Item(2, "Diamond Ore", "A Diamond", new Dictionary<string, int>
-            {
-                {"Value",500},
-            }),
-            
-            new Item(3, "Silver Pick", "A Pick made out of Silver", new Dictionary<string, int>
-            {
-                {"Power",5},
-                {"Defence",50},
-            }),
-            
-            new Item(4, "Emerald Ore", "An Emerald", new Dictionary<string, int>
-            {
-                {"Value", 400},
-            }),
-            
-            new Item(5, "Gold Ore", "A piece of Gold", new Dictionary<string, int>
-            {
-                {"Value",200},
-            }),
+            new Item(2, "Silver Pick", "A silver pick.",
+            new Dictionary<string, int> {
+                { "Attack", 5 },
+                { "Mining", 20}
+            })
         };
     }
 }

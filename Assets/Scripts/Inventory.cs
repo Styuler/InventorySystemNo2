@@ -1,20 +1,27 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
-{
+public class Inventory : MonoBehaviour {
     public List<Item> characterItems = new List<Item>();
     public ItemDatabase itemDatabase;
     public UIInventory inventoryUI;
 
-    private void Start()
+    void Start()
     {
-        GiveItem(1);
-        GiveItem("Diamond Sword");
+        inventoryUI.gameObject.SetActive(!inventoryUI.gameObject.activeSelf);
+        GiveItem(0);
         GiveItem(2);
-        RemoveItem(2);
+        GiveItem(1);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            inventoryUI.gameObject.SetActive(!inventoryUI.gameObject.activeSelf);
+        }
     }
 
     public void GiveItem(int id)
@@ -22,7 +29,7 @@ public class Inventory : MonoBehaviour
         Item itemToAdd = itemDatabase.GetItem(id);
         characterItems.Add(itemToAdd);
         inventoryUI.AddNewItem(itemToAdd);
-        Debug.Log("Added Item: " + itemToAdd.title);
+        Debug.Log("Added item: " + itemToAdd.title);
     }
 
     public void GiveItem(string itemName)
@@ -30,22 +37,22 @@ public class Inventory : MonoBehaviour
         Item itemToAdd = itemDatabase.GetItem(itemName);
         characterItems.Add(itemToAdd);
         inventoryUI.AddNewItem(itemToAdd);
-        Debug.Log("Added Item: " + itemToAdd.title);
+        Debug.Log("Added item: " + itemToAdd.title);
     }
-    
-    public Item checkForItem(int id)
+
+    public Item CheckForItem(int id)
     {
         return characterItems.Find(item => item.id == id);
     }
 
     public void RemoveItem(int id)
     {
-        Item itemToRemove = checkForItem(id);
+        Item itemToRemove = CheckForItem(id);
         if (itemToRemove != null)
         {
             characterItems.Remove(itemToRemove);
             inventoryUI.RemoveItem(itemToRemove);
-            Debug.Log("item removed: " + itemToRemove.title);
+            Debug.Log("Removed item: " + itemToRemove.title);
         }
     }
 }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,17 +6,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class UIItem : MonoBehaviour, IPointerClickHandler
-{
+public class UIItem : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler {
     public Item item;
     private Image spriteImage;
     private UIItem selectedItem;
-
-    private void Awake()
+    private Tooltip tooltip;
+    void Awake()
     {
+        selectedItem = GameObject.Find("SelectedItem").GetComponent<UIItem>();
+        tooltip = GameObject.Find("Tooltip").GetComponent<Tooltip>();
         spriteImage = GetComponent<Image>();
         UpdateItem(null);
-        selectedItem = GameObject.Find("SelectedItem").GetComponent<UIItem>();
     }
 
     public void UpdateItem(Item item)
@@ -25,7 +25,7 @@ public class UIItem : MonoBehaviour, IPointerClickHandler
         if (this.item != null)
         {
             spriteImage.color = Color.white;
-            spriteImage.sprite = this.item.icon;
+            spriteImage.sprite = item.icon;
         }
         else
         {
@@ -33,11 +33,11 @@ public class UIItem : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
         if (this.item != null)
         {
-            if (selectedItem != null)
+            if (selectedItem.item != null)
             {
                 Item clone = new Item(selectedItem.item);
                 selectedItem.UpdateItem(this.item);
@@ -54,5 +54,18 @@ public class UIItem : MonoBehaviour, IPointerClickHandler
             UpdateItem(selectedItem.item);
             selectedItem.UpdateItem(null);
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+       if (this.item != null)
+       {
+            tooltip.GenerateTooltip(this.item);
+       }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        tooltip.gameObject.SetActive(false);
     }
 }
