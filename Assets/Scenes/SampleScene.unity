@@ -155,11 +155,11 @@ MonoBehaviour:
   width: 100
   height: 20
   minStoneHeight: 2
-  maxStoneHeight: 7
-  dirt: {fileID: 4982504439635647216, guid: d44fc981235c2b749867d7a32204fdc1, type: 3}
-  grass: {fileID: 5771989676834068395, guid: cc6847b8dcf477642925f27a0b257c48, type: 3}
-  dirt_grass: {fileID: 4026993962926156276, guid: a510fe9c36fc3a042860438b435d628e, type: 3}
-  stone: {fileID: 8957163442602766138, guid: 85bf56905a55d5c46a46846cc9d19f92, type: 3}
+  maxStoneHeight: 6
+  dirt: {fileID: 6768269963931217563, guid: 2d89ea379f911b3438cddb98deb869f4, type: 3}
+  grass: {fileID: 7523856761517662943, guid: 505e3d9de1674de43bf155fd35c36b9a, type: 3}
+  dirt_grass: {fileID: 8587234334281694221, guid: 78aba5f821766674e9789350a0a0ce06, type: 3}
+  stone: {fileID: 4370669872576131054, guid: b6b403ff1bffa7e4da30890074331dca, type: 3}
 --- !u!4 &93544168
 Transform:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &296582088
 GameObject:
@@ -596,7 +596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.04, z: -10}
+  m_LocalPosition: {x: 50, y: 25, z: -10}
   m_LocalScale: {x: 3.4525847, y: 1.9318311, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4455,58 +4455,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 296582089}
   inventoryUI: {fileID: 1342151164}
---- !u!1 &1932865234
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1932865236}
-  - component: {fileID: 1932865235}
-  m_Layer: 0
-  m_Name: WorldGenerator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1932865235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1932865234}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aa1d732b38352f49bc8de1ee0278b2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tile: {fileID: 21300000, guid: 7c38ac94ffb44934a89106ee5a78ea10, type: 3}
-  worldSize: 50
-  caveFreq: 0.09
-  terrainFreq: 0.05
-  heightMultiplier: 10
-  heightAddition: 25
-  seed: 0
-  noiseTexture: {fileID: 0}
---- !u!4 &1932865236
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1932865234}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12434328, y: 0.8666199, z: -3.0626533}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2140262632
 GameObject:
   m_ObjectHideFlags: 0

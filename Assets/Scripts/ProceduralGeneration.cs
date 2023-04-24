@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -9,7 +6,7 @@ public class ProceduralGeneration : MonoBehaviour
 {
     [SerializeField] private int width = 20, height = 20;
     [SerializeField] private int minStoneHeight, maxStoneHeight;
-    [SerializeField] private GameObject dirt, grass, dirt_grass, stone;
+    [SerializeField] private GameObject dirt, dirt_grass, stone;
 
     private void Start()
     {
@@ -48,14 +45,15 @@ public class ProceduralGeneration : MonoBehaviour
             else
             {
                 SpawnObj(dirt_grass,x,height);
+                //SpawnObj(grass, x, height + 1);
             }
             
         }
     }
 
-    void SpawnObj(GameObject obj,int width,int height)
+    void SpawnObj(GameObject obj,int x,int y)
     {
-        obj = Instantiate(obj, new Vector2(width, height), quaternion.identity);
+        obj = Instantiate(obj, new Vector2(x, y), quaternion.identity);
         obj.transform.parent = this.transform;
     }
 }
