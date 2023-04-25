@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 public class ProceduralGeneration : MonoBehaviour
 {
-    [SerializeField] private int width = 20, height = 20;
+    [SerializeField] private int width = 100, height = 20;
     [SerializeField] private int minStoneHeight, maxStoneHeight;
     [SerializeField] private GameObject dirt, dirt_grass, stone;
 
