@@ -23,24 +23,19 @@ public class PlayerMovement : MonoBehaviour
         private void Update()
         {
             movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
-
-            if(Input.GetKey("w"))
-            {
-                movement.y = 0;
-            }
 
             if (Input.GetKeyDown("space") && !isJumping)
             {
-                rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
-                isJumping = true;
+                Debug.Log("jump");
+                rb.AddForce(Vector2.up * JumpHeight * speed, ForceMode2D.Impulse);
+                // isJumping = true;
             }
         }
 
-        private void OnCollisionEnter(Collision other)
-        {
-            isJumping = false;
-        }
+        // private void OnCollisionEnter(Collision other)
+        // {
+        //     isJumping = false;
+        // }
 
         private void FixedUpdate()
         {
