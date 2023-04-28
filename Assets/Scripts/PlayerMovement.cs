@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
      [Range(0, 10)]
         [SerializeField] private float speed = 6f;
-        [SerializeField] private float JumpHeight = 10f;
+        [SerializeField] private float JumpForce = 10f;
         private bool isJumping;
         private Rigidbody2D rb;
         private BoxCollider2D bc;
@@ -25,18 +25,18 @@ public class PlayerMovement : MonoBehaviour
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
 
-            if (Input.GetKeyDown("space") && !isJumping)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("jump");
-                rb.AddForce(Vector2.up * JumpHeight * speed, ForceMode2D.Impulse);
-                isJumping = true;
+                rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
+                // isJumping = true;
             }
         }
 
-        private void OnCollisionEnter(Collision other)
-        {
-            isJumping = false;
-        }
+        // private void OnCollisionEnter(Collision other)
+        // {
+        //     isJumping = false;
+        // }
 
         private void FixedUpdate()
         {

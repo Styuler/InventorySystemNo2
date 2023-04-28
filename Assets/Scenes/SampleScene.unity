@@ -156,9 +156,14 @@ MonoBehaviour:
   height: 20
   minStoneHeight: 2
   maxStoneHeight: 6
+  minOreHeight: 10
+  maxOreHeight: 18
+  minOreWidth: 4
+  maxOreWidth: 4
   dirt: {fileID: 6768269963931217563, guid: 2d89ea379f911b3438cddb98deb869f4, type: 3}
   dirt_grass: {fileID: 8587234334281694221, guid: 78aba5f821766674e9789350a0a0ce06, type: 3}
   stone: {fileID: 4370669872576131054, guid: b6b403ff1bffa7e4da30890074331dca, type: 3}
+  iron_ore: {fileID: 1942797289871083161, guid: 88dc4de233c2fef41b9b5c606477ce2e, type: 3}
 --- !u!4 &93544168
 Transform:
   m_ObjectHideFlags: 0
@@ -4420,8 +4425,8 @@ GameObject:
   - component: {fileID: 1818795126}
   - component: {fileID: 1818795131}
   - component: {fileID: 1818795129}
-  - component: {fileID: 1818795127}
-  - component: {fileID: 1818795130}
+  - component: {fileID: 1818795133}
+  - component: {fileID: 1818795132}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4459,27 +4464,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 296582089}
   inventoryUI: {fileID: 1342151164}
---- !u!50 &1818795127
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818795123}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 25
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!212 &1818795129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4532,7 +4516,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1818795130
+--- !u!114 &1818795131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818795123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80bddafbee3006b4fa4464bc9a6b29d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  JumpForce: 10
+--- !u!50 &1818795132
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818795123}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 25
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &1818795133
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4558,20 +4577,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.44, y: 0.59}
   m_EdgeRadius: 0
---- !u!114 &1818795131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818795123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80bddafbee3006b4fa4464bc9a6b29d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8
-  JumpHeight: 10
 --- !u!1 &2140262632
 GameObject:
   m_ObjectHideFlags: 0
