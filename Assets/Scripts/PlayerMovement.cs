@@ -17,25 +17,26 @@ public class PlayerMovement : MonoBehaviour
         {
             rb = GetComponent<Rigidbody2D>();
             bc = GetComponent<BoxCollider2D>();
-            isJumping = false;
+            // isJumping = false;
         }
         
         private void Update()
         {
             movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
             if (Input.GetKeyDown("space") && !isJumping)
             {
                 Debug.Log("jump");
                 rb.AddForce(Vector2.up * JumpHeight * speed, ForceMode2D.Impulse);
-                // isJumping = true;
+                isJumping = true;
             }
         }
 
-        // private void OnCollisionEnter(Collision other)
-        // {
-        //     isJumping = false;
-        // }
+        private void OnCollisionEnter(Collision other)
+        {
+            isJumping = false;
+        }
 
         private void FixedUpdate()
         {
