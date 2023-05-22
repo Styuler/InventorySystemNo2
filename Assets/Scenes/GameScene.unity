@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bf2e9fb9bfc02428deca954d363ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 300
+  width: 400
   minStoneHeight: 2
   maxStoneHeight: 6
   minOreHeight: 10
@@ -167,8 +167,8 @@ MonoBehaviour:
   grass: {fileID: 11400000, guid: d1369a7cd44a8074bab7cdacd200699f, type: 2}
   stone: {fileID: 11400000, guid: f168bda4bf0baa4488dbd64f3bde2047, type: 2}
   iron: {fileID: 11400000, guid: 3097e852ebeb5374eb5bea90a429ca72, type: 2}
-  heightValue: 45
-  smoothness: 75
+  heightValue: 65
+  smoothness: 70
   seed: 0
 --- !u!4 &93544168
 Transform:
@@ -1385,7 +1385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818795123}
   m_LocalRotation: {x: 0.008726558, y: 0, z: 0, w: 0.999962}
-  m_LocalPosition: {x: 1.58, y: 27.91, z: 0}
+  m_LocalPosition: {x: 1.58, y: 43.1, z: 0.3}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

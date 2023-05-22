@@ -17,7 +17,7 @@ public class ProceduralGeneration : MonoBehaviour
 
     private void Start()
     {
-        seed = Random.Range(-10000, 10000);
+        seed = Random.Range(-100000, 100000);
         Generation();
     }
 
@@ -25,7 +25,7 @@ public class ProceduralGeneration : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            seed = Random.Range(-10000, 10000);
+            seed = Random.Range(-100000, 100000);
             Generation();
         }
 
@@ -54,7 +54,7 @@ public class ProceduralGeneration : MonoBehaviour
             // int minHeight = height - 1;
             // int maxHeight = height + 2;
             // height = Random.Range(minHeight, maxHeight);
-            //--> Replacement with PerlinNoise
+            //--> Replacement through PerlinNoise
             int height = Mathf.RoundToInt(heightValue * Mathf.PerlinNoise(x / smoothness, seed)); 
             
             int minStoneSpawnDistance = height - minStoneHeight;
