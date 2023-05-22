@@ -5,8 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
-{
-    public Transform Player;
+{ 
+    [SerializeField] private Transform Player;
 
     private void Update()
     {
