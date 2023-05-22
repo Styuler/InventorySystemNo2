@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         float jump = Input.GetAxis("Jump");
         Vector2 movement = new Vector2(horizontal * moveSpeed, rb.velocity.y);
 
-        if (horizontal > 0)
+        if (horizontal >= 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
