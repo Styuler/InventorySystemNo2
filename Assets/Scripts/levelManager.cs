@@ -19,7 +19,7 @@ public class levelManager : MonoBehaviour, IPointerDownHandler
         }
 
         private void Update()
-        {
+        {   
             if (Input.GetKey(KeyCode.Escape))
             {
                 SceneManager.LoadScene(menuName);

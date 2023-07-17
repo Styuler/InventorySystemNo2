@@ -610,6 +610,11 @@ MonoBehaviour:
   m_Spacing: {x: 5, y: 5}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!1 &770080438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5518400408728524375, guid: 813c74407a2df8a448420cf8e49052d0, type: 3}
+  m_PrefabInstance: {fileID: 1167003858810853575}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &848148815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,3 +1880,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5518400408728524369, guid: 813c74407a2df8a448420cf8e49052d0, type: 3}
   m_PrefabInstance: {fileID: 1167003858810853575}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6676388795552370333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770080438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec5a33bfafbd164e8607d4ac12df717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castDistance: 10
+  raycastPoint: {fileID: 6676388795552370326}
+  layer:
+    serializedVersion: 2
+    m_Bits: 1
+  _tilemaps:
+  - {fileID: 1253427447}
+  - {fileID: 131631339}
+  - {fileID: 1326019576}
+  - {fileID: 960253902}

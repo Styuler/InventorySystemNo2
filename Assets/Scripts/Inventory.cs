@@ -22,6 +22,12 @@ public class Inventory : MonoBehaviour {
         {
             inventoryUI.gameObject.SetActive(!inventoryUI.gameObject.activeSelf);
         }
+
+        if (characterItems.Contains(itemDatabase.GetItem(2)))
+        {
+            Debug.Log("heyho");
+            
+        }
     }
 
     public void GiveItem(int id)
