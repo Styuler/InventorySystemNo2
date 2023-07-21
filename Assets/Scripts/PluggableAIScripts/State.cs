@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class State : ScriptableObject
 {
+    //😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊
     public Activity[] activities;
     public Transition[] transitions;
 
@@ -13,7 +14,6 @@ public class State : ScriptableObject
         DoActivities(controller);
         CheckTransitions(controller);
     }
-
     void DoActivities(StateController controller)
     {
         foreach ( Activity activity in activities)        
