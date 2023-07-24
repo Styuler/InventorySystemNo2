@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf23d1e0660891499ac6482fc0847b3, type: 3}
   m_Name: Shoot Action
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5607580510970723373, guid: 17b138cd82c27d5489556f8fab3283a3, type: 3}

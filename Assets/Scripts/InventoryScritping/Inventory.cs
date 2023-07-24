@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour {
 
         if (characterItems.Contains(itemDatabase.GetItem(2)))
         {
-            Debug.Log("heyho");
+            //Debug.Log("heyho");
             
         }
     }
